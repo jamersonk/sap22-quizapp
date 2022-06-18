@@ -21,6 +21,13 @@ var Questions = [
 let DO_NOT_EXCEED = Questions.count - 1
 
 struct ContentView: View {
+    fileprivate func QuizButton(_ label: String, color: Color) -> some View {
+            Text(label)
+                .padding()
+                .background(color)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+        }
     @State var totalQuestions = Questions.count
     @State var currentQuestion = 0
     @State var points = 0
@@ -29,8 +36,6 @@ struct ContentView: View {
     @State var isAnswerCorrect = false
     @State var hasAnswered = false
 
-    }
-    
     var body: some View {
         ZStack{
             Color.white
@@ -60,7 +65,7 @@ struct ContentView: View {
                         currentQuestion += 1
                     }
                 } label: {
-                    Text(Questions[currentQuestion].solutionA)
+                    QuizButton("\(Questions[currentQuestion].solutionA)", color: .red)
                 }
                 .padding()
                 Button {
@@ -73,7 +78,7 @@ struct ContentView: View {
                         currentQuestion += 1
                     }
                 } label: {
-                    Text(Questions[currentQuestion].solutionB)
+                    QuizButton("\(Questions[currentQuestion].solutionB)", color: .blue)
                 }
                 .padding()
                 Button {
@@ -86,7 +91,7 @@ struct ContentView: View {
                         currentQuestion += 1
                     }
                 } label: {
-                    Text(Questions[currentQuestion].solutionC)
+                    QuizButton("\(Questions[currentQuestion].solutionC)", color: .yellow)
                 }
                 .padding()
                 Button {
@@ -99,7 +104,7 @@ struct ContentView: View {
                         currentQuestion += 1
                     }
                 } label: {
-                    Text(Questions[currentQuestion].solutionD)
+                    QuizButton("\(Questions[currentQuestion].solutionD)", color: .green)
                 }
                 .padding()
             }
