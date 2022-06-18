@@ -5,7 +5,7 @@
 //  Created by James Kuang on 15/6/22.
 //
 import SwiftUI
-// VARIABLES AND CONSTANTS
+
 var Questions = [
     Question(QnNo: "1", qn: "Which nation was first absorbed by Nazi Germany?", solutionA: "Czeckoslovakia", solutionB: "Austria", solutionC: "Poland", solutionD: "France"),
     Question(QnNo: "2", qn: "Which city sustained the most deaths from bombing during WWII?", solutionA: "London", solutionB: "Dresden", solutionC: "France", solutionD: "Kosovo"),
@@ -17,7 +17,8 @@ var Questions = [
     Question(QnNo: "8", qn: "What is the name of the state of Germany between the years of 1918 and 1933?", solutionA: "Inter-war Germany", solutionB: "Weimar Republic", solutionC: "German Reich", solutionD: "Prussia"),
     Question(QnNo: "9", qn: "Who was the last president of the Weimar Republic?", solutionA: "Adolf Hitler", solutionB: "Hindenburg", solutionC: "Joseph Stalin", solutionD: "Mao Zedong"),
     Question(QnNo: "10", qn: "What type of electorial system did the Weimar Republic utilise?", solutionA: "First Past the Post", solutionB: "Proportional Voting", solutionC: "Direct Democracy", solutionD: "Preferiential Voting"),
-]
+] // all questions are put here
+
 let DO_NOT_EXCEED = Questions.count - 1
 
 struct ContentView: View {
@@ -55,6 +56,7 @@ struct ContentView: View {
                     .padding()
                 Text(Questions[currentQuestion].qn)
                     .padding()
+                // option A
                 Button {
                     print("Answered A")
                     if hasAnswered == false {
@@ -68,6 +70,7 @@ struct ContentView: View {
                     QuizButton("\(Questions[currentQuestion].solutionA)", color: .red)
                 }
                 .padding()
+                // option B
                 Button {
                     print("Answered B")
                     if hasAnswered == false {
@@ -81,6 +84,7 @@ struct ContentView: View {
                     QuizButton("\(Questions[currentQuestion].solutionB)", color: .blue)
                 }
                 .padding()
+                // option C
                 Button {
                     print("Answered C")
                     if hasAnswered == false {
@@ -94,6 +98,7 @@ struct ContentView: View {
                     QuizButton("\(Questions[currentQuestion].solutionC)", color: .yellow)
                 }
                 .padding()
+                // option D
                 Button {
                     print("Answered D")
                     if hasAnswered == false {
